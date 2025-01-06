@@ -532,7 +532,7 @@
                 </div>
                 <div class="flex-row justify-between items-center">
                     <div class="flex-row gap-5 items-center">
-                        <div class="bold">4.5</div>
+                        <div class="bold">{{ $md_tour->md_tour_star }}</div>
                         <div class="rating">
                             <input value="5" name="rate" id="star5" type="radio">
                             <label title="text" for="star5"></label>

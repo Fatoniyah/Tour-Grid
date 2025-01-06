@@ -9,7 +9,7 @@
             <div class="title-detail pt-10">{{ $md_tour->md_tour_nameeng }}</div>
             <div class="flex-row gap-10 text-bold text-grey">
 
-                <div>{{ $md_tour->md_tour_day }} nights - 6 Days</div>
+                <div>{{ $md_tour->md_tour_night }} nights - {{ $md_tour->md_tour_day }} Days</div>
                 <div class="">•</div>
                 <div>1 Country - 2 Cities</div>
             </div>
