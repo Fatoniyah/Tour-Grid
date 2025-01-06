@@ -1,8 +1,6 @@
 @extends('detail_layout')
 
 @section('tap')
-
-
     <div class="tap-bar gap-10">
         <button class="btn-tap tablinks active" onclick="openCity(event, 'Overview')">Overview</button>
         <button class="btn-tap tablinks" onclick="openCity(event, 'Itinerary')">Itinerary</button>
@@ -529,15 +527,26 @@
         <div class="w-30p ">
             <div class="border w-90p">
                 <div class="flex-row gap-5 items-center">
-                    <div class="font-30 bold">280</div>
+                    <div class="font-30 bold">{{ $md_tour->md_tour_netadult }}</div>
                     <div class="text-grey">/person</div>
                 </div>
-                <div class="flex-row justify-between">
-                    <div class="flex-row gap-5">
+                <div class="flex-row justify-between items-center">
+                    <div class="flex-row gap-5 items-center">
                         <div class="bold">4.5</div>
-                        <div>star</div>
+                        <div class="rating">
+                            <input value="5" name="rate" id="star5" type="radio">
+                            <label title="text" for="star5"></label>
+                            <input value="4" name="rate" id="star4" type="radio">
+                            <label title="text" for="star4"></label>
+                            <input value="3" name="rate" id="star3" type="radio" checked="">
+                            <label title="text" for="star3"></label>
+                            <input value="2" name="rate" id="star2" type="radio">
+                            <label title="text" for="star2"></label>
+                            <input value="1" name="rate" id="star1" type="radio">
+                            <label title="text" for="star1"></label>
+                        </div>
                     </div>
-                    <div class="justify-end text-grey">(365 reviews)</div>
+                    <div class="justify-end text-grey">({{ $md_tour->md_tour_count }} reviews)</div>
                 </div>
                 <a href="{{ url('detail/' . $md_tour->md_tour_id . '/booking') }}">
                     <button class="btn-detail w-100p font-16">Book Now</button>

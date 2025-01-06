@@ -35,6 +35,83 @@
                         <div class="w-40p"><img src="{{ URL::asset('/img/p1_1.jpg') }}" alt="Avatar"></div>
                         <div class="w-60p flex-col gap-5 p-10">
                             <div class="bold font-30">Beautiful Bali with Malaysia</div>
+                            <div class="justify-between flex-row">
+                                <div class="rating">
+                                    <input value="5" name="rate" id="star5" type="radio">
+                                    <label title="text" for="star5"></label>
+                                    <input value="4" name="rate" id="star4" type="radio">
+                                    <label title="text" for="star4"></label>
+                                    <input value="3" name="rate" id="star3" type="radio" checked="">
+                                    <label title="text" for="star3"></label>
+                                    <input value="2" name="rate" id="star2" type="radio">
+                                    <label title="text" for="star2"></label>
+                                    <input value="1" name="rate" id="star1" type="radio">
+                                    <label title="text" for="star1"></label>
+                                </div>
+                                <div class="justify-end"></div>
+                            </div>
+
+                            <div class="info-container pt-10">
+                                <div class="info-item">
+                                    <svg class="w-[40px] h-[40px] text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="grey"
+                                        viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd"
+                                            d="M6 5V4a1 1 0 1 1 2 0v1h3V4a1 1 0 1 1 2 0v1h3V4a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v2H3V7a2 2 0 0 1 2-2h1ZM3 19v-8h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm5-6a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H8Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+
+
+                                    <div class="text-grey font-14">April 12-17</div>
+                                </div>
+                                <div class="separator">•</div>
+                                <div class="info-item">
+                                    <svg class="w-[40px] h-[40px] text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="grey"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M2.535 11A3.981 3.981 0 0 0 2 13v4a1 1 0 0 0 1 1h2v1a1 1 0 1 0 2 0v-1h10v1a1 1 0 1 0 2 0v-1h2a1 1 0 0 0 1-1v-4c0-.729-.195-1.412-.535-2H2.535ZM20 9V8a4 4 0 0 0-4-4h-3v5h7Zm-9-5H8a4 4 0 0 0-4 4v1h7V4Z" />
+                                    </svg>
+
+
+                                    <div class="text-grey font-14">1 Room
+                                    </div>
+                                </div>
+                                <div class="separator">•</div>
+                                <div class="info-item">
+                                    <svg class="w-[40px] h-[40px] text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="grey"
+                                        viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd"
+                                            d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H6Zm7.25-2.095c.478-.86.75-1.85.75-2.905a5.973 5.973 0 0 0-.75-2.906 4 4 0 1 1 0 5.811ZM15.466 20c.34-.588.535-1.271.535-2v-1a5.978 5.978 0 0 0-1.528-4H18a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2h-4.535Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+
+
+
+                                    <div class="text-grey font-14">2 Guests
+
+                                    </div>
+                                </div>
+                                <div class="separator">•</div>
+                                <div class="info-item">
+                                    <svg class="w-[40px] h-[40px] text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="grey"
+                                        viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd"
+                                            d="M5.575 13.729C4.501 15.033 5.43 17 7.12 17h9.762c1.69 0 2.618-1.967 1.544-3.271l-4.881-5.927a2 2 0 0 0-3.088 0l-4.88 5.927Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+
+
+
+
+                                    <div class="text-grey font-14">From New York
+
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -109,12 +186,12 @@
                     </table>
                 </div>
 
-                <div class="pt-20 justify-between flex-row">
+                {{-- <div class="pt-20 justify-between flex-row">
                     <div></div>
                     <div class="justify-end">
                         <button class="btn-detail">Next</button>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div id="Traveler Info" class="tabcontent active">
                 <div class="font-30 bold">Traveler Detail</div>
@@ -258,25 +335,35 @@
                         <div class="text-grey text-center">Or via social media</div>
 
                         <div class="pt-10 pb-10 justify-center flex-row gap-5">
-                            <button class="btn-facebook  font-16 items-center flex-row gap-5"> <svg viewBox="0 0 24 24" height="24"
-                                    width="24" xmlns="http://www.w3.org/2000/svg">
+                            <button class="btn-facebook  font-16 items-center flex-row gap-5"> <svg viewBox="0 0 24 24"
+                                    height="24" width="24" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z"
                                         fill="#ffffff"></path>
                                 </svg>Facebook</button>
-                            <button class="btn-google font-16 items-center flex-row gap-5"><svg xml:space="preserve" style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="20" version="1.1">
-                                <path d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256
-                                    c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456
-                                    C103.821,274.792,107.225,292.797,113.47,309.408z" style="fill:#ffffff;"></path>
-                                <path d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451
-                                    c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535
-                                    c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z" style="fill:#ffffff;"></path>
-                                <path d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512
-                                    c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771
-                                    c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z" style="fill:#ffffff;"></path>
-                                <path d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012
-                                    c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0
-                                    C318.115,0,375.068,22.126,419.404,58.936z" style="fill:#ffffff;"></path>
+                            <button class="btn-google font-16 items-center flex-row gap-5"><svg xml:space="preserve"
+                                    style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512" y="0px" x="0px"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                                    id="Layer_1" width="20" version="1.1">
+                                    <path d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256
+                                                    c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456
+                                                    C103.821,274.792,107.225,292.797,113.47,309.408z"
+                                        style="fill:#ffffff;">
+                                    </path>
+                                    <path
+                                        d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451
+                                                    c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535
+                                                    c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"
+                                        style="fill:#ffffff;"></path>
+                                    <path d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512
+                                                    c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771
+                                                    c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"
+                                        style="fill:#ffffff;">
+                                    </path>
+                                    <path d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012
+                                                    c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0
+                                                    C318.115,0,375.068,22.126,419.404,58.936z" style="fill:#ffffff;">
+                                    </path>
 
                                 </svg> Google</button>
                         </div>
