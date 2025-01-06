@@ -400,11 +400,19 @@ btn-1 {
     color: white;
 }
 
-.font-30{
+.font-20 {
+    font-size: 20px;
+}
+.font-30 {
     font-size: 30px;
 }
 
-.bold{
+.bold {
     font-weight: bold;
 }
 
+.text-format {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 1px;
+}
