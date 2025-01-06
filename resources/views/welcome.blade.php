@@ -89,7 +89,7 @@
                                     <div class="text-line-through text-grey">${{ $tour->md_tour_priceadult }}</div>
                                 </div>
                                 <div>
-                                    <a href="{{ url('/detail') }}">
+                                    <a href="{{ url('detail/'. $tour->md_tour_id ) }}">
                                         <button class="btn-detail">View Detail</button>
                                     </a>
 

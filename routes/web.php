@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get("", [MainController::class, "index"]);
-// Route::get("detail", [MainController::class, "detail"]);
-Route::get("detail", [MainController::class, "detail"]);
+ Route::get("", [MainController::class, "index"]);
+ Route::get("detail/{md_tour_id}", [MainController::class, "detail"]);
+ Route::get("detail/{md_tour_id}/booking", [MainController::class, "booking"]);
+
 

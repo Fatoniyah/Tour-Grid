@@ -12,15 +12,14 @@ class MainController extends Controller
         return view("welcome", compact("md_tour"));
     }
 
-    public function detail()
+    public function detail($md_tour_id)
     {
-
-        return view("detail");
-
+        $md_tour = MdTour::findOrFail($md_tour_id);
+        return view("detail", compact("md_tour"));
     }
 
-    public function tap()
-    {
-        return view("tap");
+    public function booking(){
+        return view("booking");
     }
+
 }

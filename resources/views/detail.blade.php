@@ -1,6 +1,8 @@
 @extends('detail_layout')
 
 @section('tap')
+
+
     <div class="tap-bar gap-10">
         <button class="btn-tap tablinks active" onclick="openCity(event, 'Overview')">Overview</button>
         <button class="btn-tap tablinks" onclick="openCity(event, 'Itinerary')">Itinerary</button>
@@ -537,7 +539,11 @@
                     </div>
                     <div class="justify-end text-grey">(365 reviews)</div>
                 </div>
-                <div class="pt-10"><button class="btn-detail w-100p  font-16">Book Now</button></div>
+                <a href="{{ url('detail/' . $md_tour->md_tour_id . '/booking') }}">
+                    <button class="btn-detail w-100p font-16">Book Now</button>
+                </a>
+
+
                 <div class="pt-10"><button class="btn-send-inquiry w-100p  font-16">Send Inquiry</button></div>
 
 
