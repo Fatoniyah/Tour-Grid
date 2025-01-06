@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Review your Booking')
+
 @section('content')
     <h1 class="text-center">Review your Booking</h1>
 
@@ -245,7 +247,7 @@
                                 </label>
                             </div>
                         </div>
-                        <label class="container pt-10 items-center">
+                        <label class="flex-row checked-design pt-10 items-center">
                             <input checked="checked" type="checkbox">
                             <div class="checkmark"></div>
                             <div class="text-grey">I Already Have Booking Account</div>

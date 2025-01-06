@@ -645,7 +645,7 @@ th {
 
 
 /* Hide the default checkbox */
-.container input {
+.checked-design input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -653,10 +653,7 @@ th {
     width: 0;
   }
 
-  .container {
-    display: flex;
-    gap: 10px;
-  }
+
 
 
   /* Create a custom checkbox */
@@ -678,7 +675,7 @@ th {
     box-sizing: border-box;
   }
 
-  .container input:checked ~ .checkmark {
+  .checked-design input:checked ~ .checkmark {
 
     background-color: #5143d9;
     height: 20px;
@@ -701,12 +698,12 @@ th {
     display: none;
   }
 
-  .container input:checked ~ .checkmark:after {
+  .checked-design input:checked ~ .checkmark:after {
     display: block;
   }
 
   /* Style the checkmark/indicator */
-  .container .checkmark:after {
+  .checked-design .checkmark:after {
     left: 0.45em;
     top: 0.25em;
     width: 0.25em;
