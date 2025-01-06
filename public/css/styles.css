@@ -203,6 +203,11 @@ btn-1 {
     font-weight: 600;
 }
 
+.text-green{
+    color: #0cbc87;
+    
+}
+
 .text-line-through {
     text-decoration: line-through;
 }
