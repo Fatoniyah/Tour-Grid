@@ -18,8 +18,10 @@ class MainController extends Controller
         return view("detail", compact("md_tour"));
     }
 
-    public function booking(){
-        return view("booking");
+    public function booking($md_tour_id)
+    {
+        $md_tour = MdTour::findOrFail($md_tour_id);
+        return view("booking", compact("md_tour"));
     }
 
 }

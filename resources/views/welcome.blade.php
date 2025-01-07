@@ -15,7 +15,7 @@
                                 <img src="{{ URL::asset('/img/p1_1.jpg') }}" alt="Avatar" style="width:100%">
 
                                 <div class="button-group">
-                                    <btn-1 class="button red-bt">30 % Off</btn-1>
+                                    <btn-1 class="button red-bt">{{ $tour->md_tour_code}}</btn-1>
                                     <btn-1
                                         class="button black-btn">{{ $tour->tourType->md_tourtype_namethai ?? 'ไม่มีข้อมูล' }}</btn-1>
                                 </div>

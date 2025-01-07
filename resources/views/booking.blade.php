@@ -34,7 +34,7 @@
                     <div class="card-white">
                         <div class="w-40p"><img src="{{ URL::asset('/img/p1_1.jpg') }}" alt="Avatar"></div>
                         <div class="w-60p flex-col gap-5 p-10">
-                            <div class="bold font-30">Beautiful Bali with Malaysia</div>
+                            <div class="bold font-30">{{ $md_tour->md_tour_nameeng }}</div>
                             <div class="justify-between flex-row">
                                 <div class="rating">
                                     <input value="5" name="rate" id="star5" type="radio">
@@ -217,56 +217,35 @@
                         <tr>
                             <td>
                                 <div class="p-10 flex-col gap-10">
-                                    <div class="flex-row gap-10">
-                                        <div class="w-10p">
-                                            <div class="label">
-                                                <div class="text-grey">Title</div>
-                                                <label class="text-input">
-                                                    <input type="text" name="text" class="input" required=""
-                                                        placeholder="Title">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="w-45p">
-                                            <div class="label">
-                                                <div class="text-grey">First name</div>
-                                                <label class="text-input">
-                                                    <input type="text" name="text" class="input" required=""
-                                                        placeholder="First name">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="w-45p">
-                                            <div class="label">
-                                                <div class="text-grey">Last name</div>
-                                                <label class="text-input">
-                                                    <input type="text" name="text" class="input" required=""
-                                                        placeholder="Last name">
-                                                </label>
-                                            </div>
-                                        </div>
+                                    <div class="flex-row gap-15">
+                                        <div class="w-20p">
+                                            <label for="prefix" class="text-grey">Prefix</label>
+                                            <select id="prefix" name="prefix">
+                                                <option value="mr">Mr</option>
+                                                <option value="mrs">Mrs</option>
 
-                                    </div>
-                                    <div class="flex-row gap-10">
-                                        <div class="w-50p">
-                                            <div class="label">
-                                                <div class="text-grey">Date of birth</div>
-                                                <label class="text-input">
-                                                    <input type="text" name="text" class="input" required=""
-                                                        placeholder="First name">
-                                                </label>
-                                            </div>
+                                            </select>
                                         </div>
-                                        <div class="w-50p">
-                                            <div class="label">
-                                                <div class="text-grey">Passport number</div>
-                                                <label class="text-input">
-                                                    <input type="text" name="text" class="input" required=""
-                                                        placeholder="First name">
-                                                </label>
-                                            </div>
+                                        <div class="w-40p">
+                                            <label for="fname" class="text-grey">First Name</label>
+                                            <input type="text" id="fname" name="firstname" placeholder="">
+                                        </div>
+                                        <div class="w-40p">
+                                            <label for="lname" class="text-grey">Last name</label>
+                                            <input type="text" id="lname" name="lastname" placeholder="">
                                         </div>
                                     </div>
+                                    <div class="flex-row gap-15">
+                                        <div class="w-50p">
+                                            <label for="dob" class="text-grey">Date of birth</label>
+                                            <input type="date" id="dob" name="dob">
+                                        </div>
+                                        <div class="w-50p">
+                                            <label for="pass" class="text-grey">Passport number</label>
+                                            <input type="text" id="pass" name="passport" placeholder="">
+                                        </div>
+                                    </div>
+
 
 
                                 </div>
@@ -274,7 +253,7 @@
                         </tr>
                     </table>
                 </div>
-                <div class="pt-20">
+                {{-- <div class="pt-20">
                     <table>
                         <tr>
                             <td class="font-20 bold">Traveler 2</td>
@@ -282,70 +261,63 @@
                         <tr>
                             <td>
                                 <div class="p-10 flex-col gap-10">
-                                    <div class="flex-row gap-10">
-                                        <div class="w-10p">
-                                            <div class="label">
-                                                <div class="text-grey">Title</div>
-                                                <label class="text-input">
-                                                    <input type="text" name="text" class="input" required=""
-                                                        placeholder="Title">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="w-45p">
-                                            <div class="label">
-                                                <div class="text-grey">First name</div>
-                                                <label class="text-input">
-                                                    <input type="text" name="text" class="input" required=""
-                                                        placeholder="First name">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="w-45p">
-                                            <div class="label">
-                                                <div class="text-grey">Last name</div>
-                                                <label class="text-input">
-                                                    <input type="text" name="text" class="input" required=""
-                                                        placeholder="Last name">
-                                                </label>
-                                            </div>
-                                        </div>
+                                    <div class="flex-row gap-15">
+                                        <div class="w-20p">
+                                            <label for="prefix" class="text-grey">Prefix</label>
+                                            <select id="prefix" name="prefix">
+                                                <option value="mr">Mr</option>
+                                                <option value="mrs">Mrs</option>
 
-                                    </div>
-                                    <div class="flex-row gap-10">
-                                        <div class="w-50p">
-                                            <div class="label">
-                                                <div class="text-grey">Date of birth</div>
-                                                <label class="text-input">
-                                                    <input type="text" name="text" class="input" required=""
-                                                        placeholder="First name">
-                                                </label>
-                                            </div>
+                                            </select>
                                         </div>
-                                        <div class="w-50p">
-                                            <div class="label">
-                                                <div class="text-grey">Passport number</div>
-                                                <label class="text-input">
-                                                    <input type="text" name="text" class="input" required=""
-                                                        placeholder="First name">
-                                                </label>
-                                            </div>
+                                        <div class="w-40p">
+                                            <label for="fname" class="text-grey">First Name</label>
+                                            <input type="text" id="fname" name="firstname" placeholder="">
+                                        </div>
+                                        <div class="w-40p">
+                                            <label for="lname" class="text-grey">Last name</label>
+                                            <input type="text" id="lname" name="lastname" placeholder="">
                                         </div>
                                     </div>
+                                    <div class="flex-row gap-15">
+                                        <div class="w-50p">
+                                            <label for="dob" class="text-grey">Date of birth</label>
+                                            <input type="date" id="dob" name="dob">
+                                        </div>
+                                        <div class="w-50p">
+                                            <label for="pass" class="text-grey">Passport number</label>
+                                            <input type="text" id="pass" name="passport" placeholder="">
+                                        </div>
+                                    </div>
+
 
 
                                 </div>
                             </td>
                         </tr>
                     </table>
-                </div>
+                </div> --}}
                 <div class="pt-20">
                     <table>
                         <tr>
                             <td class="font-20 bold">Your booking detail will be sent here</td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td>
+                                <div class="p-10 flex-col gap-10">
+                                    <div class="flex-row gap-15">
+                                        <div class="w-50p">
+                                            <label for="phone" class="text-grey">Mobile Number</label>
+                                            <input type="text" id="phone" name="phone" placeholder="">
+                                        </div>
+                                        <div class="w-50p">
+                                            <label for="email" class="text-grey">
+                                                Email id</label>
+                                            <input type="text" id="email" name="email" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -356,7 +328,37 @@
                 <div class="pt-20">
                     <table>
                         <tr>
-                            <td class="font-20 bold">Credit or Debit Card</td>
+                            <td class="font-20 bold justify-between flex-row">
+                                <div>Credit or Debit Card</div>
+                                <div class="justify-end flex-row gap-10 items-center">
+
+                                    <div>
+                                        <svg viewBox="0 0 256 83" width="33" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient y2="100%" y1="-2.006%" x2="54.877%"
+                                                    x1="45.974%" id="logosVisa0">
+                                                    <stop stop-color="#222357" offset="0%"></stop>
+                                                    <stop stop-color="#254AA5" offset="100%"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                            <path transform="matrix(1 0 0 -1 0 82.668)"
+                                                d="M132.397 56.24c-.146-11.516 10.263-17.942 18.104-21.763c8.056-3.92 10.762-6.434 10.73-9.94c-.06-5.365-6.426-7.733-12.383-7.825c-10.393-.161-16.436 2.806-21.24 5.05l-3.744-17.519c4.82-2.221 13.745-4.158 23-4.243c21.725 0 35.938 10.724 36.015 27.351c.085 21.102-29.188 22.27-28.988 31.702c.069 2.86 2.798 5.912 8.778 6.688c2.96.392 11.131.692 20.395-3.574l3.636 16.95c-4.982 1.814-11.385 3.551-19.357 3.551c-20.448 0-34.83-10.87-34.946-26.428m89.241 24.968c-3.967 0-7.31-2.314-8.802-5.865L181.803 1.245h21.709l4.32 11.939h26.528l2.506-11.939H256l-16.697 79.963zm3.037-21.601l6.265-30.027h-17.158zm-118.599 21.6L88.964 1.246h20.687l17.104 79.963zm-30.603 0L53.941 26.782l-8.71 46.277c-1.022 5.166-5.058 8.149-9.54 8.149H.493L0 78.886c7.226-1.568 15.436-4.097 20.41-6.803c3.044-1.653 3.912-3.098 4.912-7.026L41.819 1.245H63.68l33.516 79.963z"
+                                                fill="url(#logosVisa0)"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <svg class="text-white fill-current" xmlns="http://www.w3.org/2000/svg"
+                                            width="23" height="23" viewBox="0 0 48 48">
+                                            <path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path>
+                                            <path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path>
+                                            <path fill="#ff3d00"
+                                                d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z">
+                                            </path>
+                                        </svg>
+                                    </div>
+
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td></td>
@@ -369,7 +371,9 @@
                             <td class="font-20 bold">Pay with Paypal</td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td>
+
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -455,24 +459,27 @@
                                     style="enable-background:new 0 0 512 512;" viewBox="0 0 512 512" y="0px" x="0px"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
                                     id="Layer_1" width="20" version="1.1">
-                                    <path d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256
-                                                            c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456
-                                                            C103.821,274.792,107.225,292.797,113.47,309.408z"
+                                    <path
+                                        d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256
+                                                                                                                    c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456
+                                                                                                                    C103.821,274.792,107.225,292.797,113.47,309.408z"
                                         style="fill:#ffffff;">
                                     </path>
                                     <path
                                         d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451
-                                                            c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535
-                                                            c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"
+                                                                                                                    c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535
+                                                                                                                    c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"
                                         style="fill:#ffffff;"></path>
-                                    <path d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512
-                                                            c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771
-                                                            c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"
+                                    <path
+                                        d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512
+                                                                                                                    c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771
+                                                                                                                    c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"
                                         style="fill:#ffffff;">
                                     </path>
-                                    <path d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012
-                                                            c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0
-                                                            C318.115,0,375.068,22.126,419.404,58.936z"
+                                    <path
+                                        d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012
+                                                                                                                    c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0
+                                                                                                                    C318.115,0,375.068,22.126,419.404,58.936z"
                                         style="fill:#ffffff;">
                                     </path>
 
