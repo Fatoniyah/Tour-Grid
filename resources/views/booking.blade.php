@@ -25,7 +25,10 @@
 
     </div>
 
+    <form action="{{ route('bookings.store') }}" method="POST">
+        @csrf
     <div class="flex-row gap-20 pt-30">
+
         <div class="w-70p">
             <div id="Tour Review" class="tabcontent active">
                 <div class="font-30 bold">Tour Review</div>
@@ -209,118 +212,86 @@
                         </div>
                     </div>
                 </div>
-                <div class="pt-20">
-                    <table>
-                        <tr>
-                            <td class="font-20 bold">Traveler 1</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="p-10 flex-col gap-10">
-                                    <div class="flex-row gap-15">
-                                        <div class="w-20p">
-                                            <label for="prefix" class="text-grey">Prefix</label>
-                                            <select id="prefix" name="prefix">
-                                                <option value="mr">Mr</option>
-                                                <option value="mrs">Mrs</option>
 
-                                            </select>
+                    <div class="pt-20">
+                        <table>
+                            <tr>
+                                <td class="font-20 bold">Traveler 1</td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <div class="p-10 flex-col gap-10">
+                                        <div class="flex-row gap-15">
+                                            <div class="w-20p">
+                                                <label for="md_booking_prefix" class="text-grey">Prefix</label>
+                                                <select id="md_booking_prefix" name="md_booking_prefix">
+                                                    <option value="mr">Mr</option>
+                                                    <option value="mrs">Mrs</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="w-40p">
+                                                <label for="md_booking_fname" class="text-grey">First Name</label>
+                                                <input type="text" id="md_booking_fname" name="md_booking_fname"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="w-40p">
+                                                <label for="md_booking_lname" class="text-grey">Last name</label>
+                                                <input type="text" id="md_booking_lname" name="md_booking_lname"
+                                                    placeholder="">
+                                            </div>
                                         </div>
-                                        <div class="w-40p">
-                                            <label for="fname" class="text-grey">First Name</label>
-                                            <input type="text" id="fname" name="firstname" placeholder="">
+                                        <div class="flex-row gap-15">
+                                            <div class="w-50p">
+                                                <label for="dob" class="text-grey">Date of birth</label>
+                                                <input type="date" id="dob" name="dob">
+                                            </div>
+                                            <div class="w-50p">
+                                                <label for="pass" class="text-grey">Passport number</label>
+                                                <input type="text" id="pass" name="passport" placeholder="">
+                                            </div>
                                         </div>
-                                        <div class="w-40p">
-                                            <label for="lname" class="text-grey">Last name</label>
-                                            <input type="text" id="lname" name="lastname" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="flex-row gap-15">
-                                        <div class="w-50p">
-                                            <label for="dob" class="text-grey">Date of birth</label>
-                                            <input type="date" id="dob" name="dob">
-                                        </div>
-                                        <div class="w-50p">
-                                            <label for="pass" class="text-grey">Passport number</label>
-                                            <input type="text" id="pass" name="passport" placeholder="">
-                                        </div>
-                                    </div>
 
 
 
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                {{-- <div class="pt-20">
-                    <table>
-                        <tr>
-                            <td class="font-20 bold">Traveler 2</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="p-10 flex-col gap-10">
-                                    <div class="flex-row gap-15">
-                                        <div class="w-20p">
-                                            <label for="prefix" class="text-grey">Prefix</label>
-                                            <select id="prefix" name="prefix">
-                                                <option value="mr">Mr</option>
-                                                <option value="mrs">Mrs</option>
-
-                                            </select>
-                                        </div>
-                                        <div class="w-40p">
-                                            <label for="fname" class="text-grey">First Name</label>
-                                            <input type="text" id="fname" name="firstname" placeholder="">
-                                        </div>
-                                        <div class="w-40p">
-                                            <label for="lname" class="text-grey">Last name</label>
-                                            <input type="text" id="lname" name="lastname" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="flex-row gap-15">
-                                        <div class="w-50p">
-                                            <label for="dob" class="text-grey">Date of birth</label>
-                                            <input type="date" id="dob" name="dob">
-                                        </div>
-                                        <div class="w-50p">
-                                            <label for="pass" class="text-grey">Passport number</label>
-                                            <input type="text" id="pass" name="passport" placeholder="">
-                                        </div>
                                     </div>
 
 
 
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div> --}}
-                <div class="pt-20">
-                    <table>
-                        <tr>
-                            <td class="font-20 bold">Your booking detail will be sent here</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="p-10 flex-col gap-10">
-                                    <div class="flex-row gap-15">
-                                        <div class="w-50p">
-                                            <label for="phone" class="text-grey">Mobile Number</label>
-                                            <input type="text" id="phone" name="phone" placeholder="">
-                                        </div>
-                                        <div class="w-50p">
-                                            <label for="email" class="text-grey">
-                                                Email id</label>
-                                            <input type="text" id="email" name="email" placeholder="">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    {{-- <div class="pt-20">
+                        <table>
+                            <tr>
+                                <td class="font-20 bold">Your booking detail will be sent here</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="p-10 flex-col gap-10">
+                                        <div class="flex-row gap-15">
+                                            <div class="w-50p">
+                                                <label for="md_booking_tel" class="text-grey">Mobile Number</label>
+                                                <input type="text" id="md_booking_tel" name="md_booking_tel"
+                                                    placeholder="">
+                                            </div>
+                                            <div class="w-50p">
+                                                <label for="md_booking_email" class="text-grey">
+                                                    Email id</label>
+                                                <input type="text" id="md_booking_email" name="md_booking_email"
+                                                    placeholder="">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div> --}}
+
+
             </div>
             <div id="Make Payment" class="tabcontent active">
                 <div class="font-30 bold">Traveler Detail</div>
@@ -444,7 +415,9 @@
                             <div class="text-grey">I Already Have Booking Account</div>
                         </label>
 
-                        <div class="pt-10 pb-10"> <button class="btn-detail w-100p font-16">Book Now</button></div>
+                        <div class="pt-10 pb-10">
+                            <button class="btn-detail w-100p font-16" type="submit">Book Now</button>
+                        </div>
 
                         <div class="text-grey text-center">Or via social media</div>
 
@@ -461,25 +434,25 @@
                                     id="Layer_1" width="20" version="1.1">
                                     <path
                                         d="M113.47,309.408L95.648,375.94l-65.139,1.378C11.042,341.211,0,299.9,0,256
-                                                                                                                    c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456
-                                                                                                                    C103.821,274.792,107.225,292.797,113.47,309.408z"
+                                                                                                                        c0-42.451,10.324-82.483,28.624-117.732h0.014l57.992,10.632l25.404,57.644c-5.317,15.501-8.215,32.141-8.215,49.456
+                                                                                                                        C103.821,274.792,107.225,292.797,113.47,309.408z"
                                         style="fill:#ffffff;">
                                     </path>
                                     <path
                                         d="M507.527,208.176C510.467,223.662,512,239.655,512,256c0,18.328-1.927,36.206-5.598,53.451
-                                                                                                                    c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535
-                                                                                                                    c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"
+                                                                                                                        c-12.462,58.683-45.025,109.925-90.134,146.187l-0.014-0.014l-73.044-3.727l-10.338-64.535
+                                                                                                                        c29.932-17.554,53.324-45.025,65.646-77.911h-136.89V208.176h138.887L507.527,208.176L507.527,208.176z"
                                         style="fill:#ffffff;"></path>
                                     <path
                                         d="M416.253,455.624l0.014,0.014C372.396,490.901,316.666,512,256,512
-                                                                                                                    c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771
-                                                                                                                    c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"
+                                                                                                                        c-97.491,0-182.252-54.491-225.491-134.681l82.961-67.91c21.619,57.698,77.278,98.771,142.53,98.771
+                                                                                                                        c28.047,0,54.323-7.582,76.87-20.818L416.253,455.624z"
                                         style="fill:#ffffff;">
                                     </path>
                                     <path
                                         d="M419.404,58.936l-82.933,67.896c-23.335-14.586-50.919-23.012-80.471-23.012
-                                                                                                                    c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0
-                                                                                                                    C318.115,0,375.068,22.126,419.404,58.936z"
+                                                                                                                        c-66.729,0-123.429,42.957-143.965,102.724l-83.397-68.276h-0.014C71.23,56.123,157.06,0,256,0
+                                                                                                                        C318.115,0,375.068,22.126,419.404,58.936z"
                                         style="fill:#ffffff;">
                                     </path>
 
@@ -495,7 +468,9 @@
                 </tr>
             </table>
         </div>
+
     </div>
+</form>
 
     <script>
         function openCity(evt, tapName) {
