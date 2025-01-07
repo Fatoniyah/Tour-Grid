@@ -2,18 +2,23 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class MdBooking extends Model
 {
-    protected $table = 'md_booking'; // ชื่อตาราง
-    protected $primaryKey = 'md_booking_id'; // คีย์หลัก
+    use HasFactory;
 
-    protected $created_at = 'md_booking_credate';
-    protected $updated_at = [];
+    // กำหนดชื่อของตาราง
+    protected $table = 'md_booking';
 
-    public $timestamps = false; // หากไม่มี created_at และ updated_at
+    // กำหนด Primary Key
+    protected $primaryKey = 'md_booking_id';
 
+    // ปิดการใช้ timestamps ของ Laravel
+    public $timestamps = false;
+
+    // กำหนด fillable fields
     protected $fillable = [
         'md_booking_code',
         'md_booking_groupcode',
@@ -35,6 +40,7 @@ class MdBooking extends Model
         'md_booking_vat',
         'md_booking_paypal',
         'md_booking_refund',
+        'md_booking_refundprice',
         'md_booking_currency',
         'md_booking_adult',
         'md_booking_child',
@@ -55,7 +61,7 @@ class MdBooking extends Model
         'md_booking_alert',
         'md_booking_slip',
         'md_booking_refno',
-        'md_booking_updatedate',
+        'md_booking_statuspayment',
         'md_booking_status',
         'md_booking_typepayment',
         'md_booking_crebyid',
@@ -63,4 +69,16 @@ class MdBooking extends Model
         'md_booking_updatebyid',
         'md_booking_updatedate',
     ];
+
+    // สร้างความสัมพันธ์กับ Tour
+    public function tour()
+    {
+        return $this->belongsTo(MdTour::class, 'md_booking_tourid', 'md_tour_id');
+    }
+
+    // สร้างความสัมพันธ์กับ Province
+    public function province()
+    {
+        return $this->belongsTo(MdProvince::class, 'md_booking_provinceid', 'md_province_id');
+    }
 }

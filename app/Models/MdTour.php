@@ -57,4 +57,20 @@ class MdTour extends Model
     {
         return $this->belongsTo(MdTourType::class, 'md_tour_typeid', 'md_tourtype_id');
     }
+
+    public function province()
+    {
+        return $this->belongsTo(MdProvince::class, 'md_tour_provid', 'md_province_id');
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(SysCountries::class, 'md_tour_countryid', 'sys_countries_id');
+    }
+
+    public function bookings()
+    {
+        return $this->hasMany(MdBooking::class, 'md_booking_tourid', 'md_tour_id');
+    }
+
 }
