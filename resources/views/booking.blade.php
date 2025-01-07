@@ -25,8 +25,7 @@
 
     </div>
 
-    <form action="{{ route('bookings.store') }}" method="POST">
-        @csrf
+
     <div class="flex-row gap-20 pt-30">
 
         <div class="w-70p">
@@ -470,7 +469,26 @@
         </div>
 
     </div>
-</form>
+    <form action="{{ route('booking.store', $md_tours->md_tour_id) }}" method="POST">
+        @csrf
+
+        <label for="fname">ชื่อ:</label>
+        <input type="text" name="fname" required>
+
+        <label for="lname">สกุล:</label>
+        <input type="text" name="lname" required>
+
+        <label for="email">อีเมล:</label>
+        <input type="email" name="email" required>
+
+        <label for="tel">เบอร์โทร:</label>
+        <input type="tel" name="tel" required>
+
+        <input type="hidden" name="md_tour_id" value="{{ $md_tours->md_tour_id }}">
+
+        <button type="submit">จอง</button>
+    </form>
+
 
     <script>
         function openCity(evt, tapName) {
