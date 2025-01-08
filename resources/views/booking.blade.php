@@ -25,8 +25,10 @@
 
     </div>
 
-
+<form action="{{ route('booking.store', $md_tours->md_tour_id) }}" method="POST">
+            @csrf
     <div class="flex-row gap-20 pt-30">
+
 
         <div class="w-70p">
             <div id="Tour Review" class="tabcontent active">
@@ -222,6 +224,7 @@
 
                                     <div class="p-10 flex-col gap-10">
                                         <div class="flex-row gap-15">
+
                                             <div class="w-20p">
                                                 <label for="md_booking_prefix" class="text-grey">Prefix</label>
                                                 <select id="md_booking_prefix" name="md_booking_prefix">
@@ -231,25 +234,29 @@
                                                 </select>
                                             </div>
                                             <div class="w-40p">
-                                                <label for="md_booking_fname" class="text-grey">First Name</label>
-                                                <input type="text" id="md_booking_fname" name="md_booking_fname"
+                                                <label for="fname" class="text-grey">First Name</label>
+                                                <input type="text" id="fname" name="fname"
                                                     placeholder="">
                                             </div>
                                             <div class="w-40p">
-                                                <label for="md_booking_lname" class="text-grey">Last name</label>
-                                                <input type="text" id="md_booking_lname" name="md_booking_lname"
+                                                <label for="lname" class="text-grey">Last name</label>
+                                                <input type="text" id="lname" name="lname"
                                                     placeholder="">
                                             </div>
                                         </div>
                                         <div class="flex-row gap-15">
                                             <div class="w-50p">
-                                                <label for="dob" class="text-grey">Date of birth</label>
-                                                <input type="date" id="dob" name="dob">
+                                                <label for="tel" class="text-grey">Tel</label>
+                                                <input type="tel" id="tel" name="tel">
                                             </div>
                                             <div class="w-50p">
-                                                <label for="pass" class="text-grey">Passport number</label>
-                                                <input type="text" id="pass" name="passport" placeholder="">
+                                                <label for="email" class="text-grey">Email</label>
+                                                <input type="email" id="email" name="email">
                                             </div>
+
+                                        </div>
+                                        <div class="pt-10 pb-10">
+                                            <button class="btn-detail w-100p font-16" type="submit">Book Now</button>
                                         </div>
 
 
@@ -262,34 +269,6 @@
                             </tr>
                         </table>
                     </div>
-
-                    {{-- <div class="pt-20">
-                        <table>
-                            <tr>
-                                <td class="font-20 bold">Your booking detail will be sent here</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="p-10 flex-col gap-10">
-                                        <div class="flex-row gap-15">
-                                            <div class="w-50p">
-                                                <label for="md_booking_tel" class="text-grey">Mobile Number</label>
-                                                <input type="text" id="md_booking_tel" name="md_booking_tel"
-                                                    placeholder="">
-                                            </div>
-                                            <div class="w-50p">
-                                                <label for="md_booking_email" class="text-grey">
-                                                    Email id</label>
-                                                <input type="text" id="md_booking_email" name="md_booking_email"
-                                                    placeholder="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div> --}}
-
 
             </div>
             <div id="Make Payment" class="tabcontent active">
@@ -396,15 +375,15 @@
                             <div class="label">
                                 <div class="text-grey">Email id</div>
                                 <label class="text-input">
-                                    <input type="text" name="text" class="input" required=""
-                                        placeholder="Enter your email">
+                                    <input type="text" name=""
+                                        placeholder="">
                                 </label>
                             </div>
                             <div class="label">
                                 <div class="text-grey">Mobile number</div>
                                 <label class="text-input">
-                                    <input type="text" name="text" class="input" required=""
-                                        placeholder="Enter your Mobile number">
+                                    <input type="text"
+                                        placeholder="">
                                 </label>
                             </div>
                         </div>
@@ -415,7 +394,7 @@
                         </label>
 
                         <div class="pt-10 pb-10">
-                            <button class="btn-detail w-100p font-16" type="submit">Book Now</button>
+                            <button class="btn-detail w-100p font-16" >Book Now</button>
                         </div>
 
                         <div class="text-grey text-center">Or via social media</div>
@@ -468,26 +447,10 @@
             </table>
         </div>
 
+
+
     </div>
-    <form action="{{ route('booking.store', $md_tours->md_tour_id) }}" method="POST">
-        @csrf
-
-        <label for="fname">ชื่อ:</label>
-        <input type="text" name="fname" required>
-
-        <label for="lname">สกุล:</label>
-        <input type="text" name="lname" required>
-
-        <label for="email">อีเมล:</label>
-        <input type="email" name="email" required>
-
-        <label for="tel">เบอร์โทร:</label>
-        <input type="tel" name="tel" required>
-
-        <input type="hidden" name="md_tour_id" value="{{ $md_tours->md_tour_id }}">
-
-        <button type="submit">จอง</button>
-    </form>
+ </form>
 
 
     <script>
