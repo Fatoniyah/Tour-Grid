@@ -36,7 +36,7 @@
                     <div class="card-white">
                         <div class="w-40p"><img src="{{ URL::asset('/img/p1_1.jpg') }}" alt="Avatar"></div>
                         <div class="w-60p flex-col gap-5 p-10">
-                            <div class="bold font-30">{{ $md_tour->md_tour_nameeng }}</div>
+                            <div class="bold font-30">{{ $md_tours->md_tour_nameeng }}</div>
                             <div class="justify-between flex-row">
                                 <div class="rating">
                                     <input value="5" name="rate" id="star5" type="radio">

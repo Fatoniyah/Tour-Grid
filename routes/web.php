@@ -19,4 +19,5 @@ Route::get("", [MainController::class, "index"]);
 Route::get("detail/{md_tour_id}", [MainController::class, "detail"]);
 Route::get('detail/{md_tour_id}/booking', [MdBookingController::class, 'booking'])->name('booking.form');
 Route::post('detail/{md_tour_id}/booking', [MdBookingController::class, 'store'])->name('booking.store');
+Route::get('success', [MdBookingController::class,'success'])->name('success');
 

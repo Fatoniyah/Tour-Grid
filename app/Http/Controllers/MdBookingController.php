@@ -28,7 +28,7 @@ class MdBookingController extends Controller
 
         // สร้างการจองใหม่
         $booking = new MdBooking();
-        $booking->md_booking_code = rand(100000, 999999); 
+        $booking->md_booking_code = rand(100000, 999999);
         $booking->md_booking_groupcode = '';
         $booking->md_booking_companyid = 1;
         $booking->md_booking_paymentid = 'default_payment';
@@ -81,7 +81,11 @@ class MdBookingController extends Controller
         $booking->save();
 
 
-        // return redirect()->route('booking.form')->with('success', 'การจองของคุณสำเร็จ');
+        return redirect()->route('success')->with('success', 'การจองของคุณสำเร็จ');
+    }
+
+    public function success(){
+        return view('success');
     }
 
 }
