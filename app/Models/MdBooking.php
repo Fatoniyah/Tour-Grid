@@ -22,4 +22,9 @@ class MdBooking extends Model
     {
         return $this->belongsTo(MdTour::class, 'md_booking_tourid', 'md_tour_id');
     }
+
+     public function countries()
+    {
+        return $this->belongsTo(SysCountries::class, 'md_booking_countryid', 'sys_countries_id');
+    }
 }
