@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MdBooking;
 use App\Models\MdTour;
+use App\Models\SysCountries;
 use Illuminate\Http\Request;
 
 class MdBookingController extends Controller
@@ -11,12 +12,19 @@ class MdBookingController extends Controller
 
     public function booking($md_tour_id)
     {
+        // $md_tours = MdTour::find($md_tour_id);
+        // $md_location = md_location::where('md_location_id', $value)->first();
         $md_tours = MdTour::findOrFail($md_tour_id);
+
+        $sys_countries = $md_tours->countries;
         return view('booking', compact('md_tours'));
     }
 
     public function store(Request $request)
     {
+        // dd($request->all());
+        $md_tour = MdTour::findOrFail($request->md_tour_id);
+        // $sys_countries = SysCountries::findOrFail($request->sys_countries_id);
 
         $validated = $request->validate([
             'fname' => 'required|string|max:255',
@@ -24,27 +32,26 @@ class MdBookingController extends Controller
             'email' => 'required|email|max:100',
             'tel' => 'required|string|max:20',
             'md_tour_id' => 'required|integer|exists:md_tour,md_tour_id',
-            
+
         ]);
 
-
         $booking = new MdBooking();
-        $booking->md_booking_code = rand(100000, 999999);
+        $booking->md_booking_code = $md_tour->md_tour_code;
         $booking->md_booking_groupcode = '';
-        $booking->md_booking_companyid = 1;
+        $booking->md_booking_companyid = $md_tour->md_tour_companyid;
         $booking->md_booking_paymentid = 'default_payment';
-        $booking->md_booking_provinceid = 1;
+        $booking->md_booking_provinceid = $md_tour->md_tour_provid;
         $booking->md_booking_tourid = $request->md_tour_id;
         $booking->md_booking_prefix = 1;
         $booking->md_booking_fname = $request->fname;
         $booking->md_booking_lname = $request->lname;
         $booking->md_booking_tel = $request->tel;
-        $booking->md_booking_country = 'Thailand';
+        $booking->md_booking_country = 'TH';
         $booking->md_booking_countrycode = 'TH';
-        $booking->md_booking_pickup = 'No pickup';
-        $booking->md_booking_pickuptime = '12:00:00';
+        $booking->md_booking_pickup = $md_tour->md_tour_pickup;
+        $booking->md_booking_pickuptime = $md_tour->md_tour_pickuptime;
         $booking->md_booking_email = $request->email;
-        $booking->md_booking_price = 0;
+        $booking->md_booking_price = $md_tour->md_tour_netadult;
         $booking->md_booking_total = 0;
         $booking->md_booking_vat = 0;
         $booking->md_booking_paypal = 0;
@@ -78,14 +85,13 @@ class MdBookingController extends Controller
         $booking->md_booking_updatebyid = 1;
         $booking->md_booking_updatedate = now();
 
-
         $booking->save();
-
 
         return redirect()->route('success')->with('success', 'การจองของคุณสำเร็จ');
     }
 
-    public function success(){
+    public function success()
+    {
         return view('success');
     }
 

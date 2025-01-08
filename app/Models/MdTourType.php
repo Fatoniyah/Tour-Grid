@@ -9,7 +9,7 @@ class MdTourType extends Model
 {
     use HasFactory;
 
-    protected $table = 'md_tour_types';
+    protected $table = 'md_tourtype';
     protected $primaryKey = 'md_tourtype_id';
     public $timestamps = false;
 
