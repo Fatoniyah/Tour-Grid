@@ -27,9 +27,12 @@
 
 <form action="{{ route('booking.store', $md_tours->md_tour_id) }}" method="POST">
             @csrf
+            <input type="hidden" name="md_tour_id" value="{{ $md_tours->md_tour_id }}">
+
     <div class="flex-row gap-20 pt-30">
 
 
+        {{-- <div>{{ $md_tours->md_tour_netadult }}</div> --}}
         <div class="w-70p">
             <div id="Tour Review" class="tabcontent active">
                 <div class="font-30 bold">Tour Review</div>
@@ -230,7 +233,6 @@
                                                 <select id="md_booking_prefix" name="md_booking_prefix">
                                                     <option value="mr">Mr</option>
                                                     <option value="mrs">Mrs</option>
-
                                                 </select>
                                             </div>
                                             <div class="w-40p">
@@ -357,9 +359,11 @@
                     <td>
                         <div class="flex-row justify-between">
                             <div class="font-20 bold">Payable Now</div>
-                            <div class="text-grey font-20">$22,500</div>
+                            <div class="text-grey font-20 bold">
+                                {{ $md_tours->md_tour_netadult }} บาท</div>
                         </div>
                     </td>
+
 
 
                 </tr>

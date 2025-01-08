@@ -24,9 +24,10 @@ class MdBookingController extends Controller
             'email' => 'required|email|max:100',
             'tel' => 'required|string|max:20',
             'md_tour_id' => 'required|integer|exists:md_tour,md_tour_id',
+            
         ]);
 
-        // สร้างการจองใหม่
+
         $booking = new MdBooking();
         $booking->md_booking_code = rand(100000, 999999);
         $booking->md_booking_groupcode = '';
