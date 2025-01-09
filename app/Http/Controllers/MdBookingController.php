@@ -55,7 +55,7 @@ class MdBookingController extends Controller
         $booking->md_booking_email = $request->email;
         $booking->md_booking_price = $md_tour->md_tour_netadult;
         $booking->md_booking_total = 0;
-        $booking->md_booking_vat = 0;
+        $booking->md_booking_vat = $md_tour->md_tour_vat;
         $booking->md_booking_paypal = 0;
         $booking->md_booking_refund = '';
         $booking->md_booking_refundprice = 0;
@@ -80,7 +80,7 @@ class MdBookingController extends Controller
         $booking->md_booking_slip = '';
         $booking->md_booking_refno = 0;
         $booking->md_booking_statuspayment = 0;
-        $booking->md_booking_status = 0;
+        $booking->md_booking_status = $md_tour->md_tour_status;
         $booking->md_booking_typepayment = 'credit_card';
         $booking->md_booking_crebyid = $md_tour->md_tour_crebyid;
         $booking->md_booking_credate = now();

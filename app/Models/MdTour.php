@@ -29,7 +29,7 @@ class MdTour extends Model
     }
     public function countries()
     {
-        return $this->belongsTo(SysCountries::class, 'md_booking_count', 'sys_countries_id');
+        return $this->belongsTo(SysCountries::class, 'md_tour_count', 'sys_countries_id');
     }
 
 }
