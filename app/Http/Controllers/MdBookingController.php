@@ -4,20 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\MdBooking;
 use App\Models\MdTour;
-use App\Models\SysCountries;
 use Illuminate\Http\Request;
 
 class MdBookingController extends Controller
 {
 
     public function booking($md_tour_id)
-{
+    {
 
-    $md_tours = MdTour::findOrFail($md_tour_id);
-    // $sys_countries = $md_tours->countries;
+        $md_tours = MdTour::findOrFail($md_tour_id);
+        // $sys_countries = $md_tours->countries;
 
-    return view('booking', compact('md_tours'));
-}
+        return view('booking', compact('md_tours'));
+    }
 
     public function store(Request $request)
     {
@@ -33,6 +32,7 @@ class MdBookingController extends Controller
             'lname' => 'required|string|max:255',
             'email' => 'required|email|max:100',
             'tel' => 'required|string|max:20',
+            'prefix' => 'required|integer',
             'md_tour_id' => 'required|integer|exists:md_tour,md_tour_id',
 
         ]);
@@ -44,7 +44,7 @@ class MdBookingController extends Controller
         $booking->md_booking_paymentid = 'default_payment';
         $booking->md_booking_provinceid = $md_tour->md_tour_provid;
         $booking->md_booking_tourid = $request->md_tour_id;
-        $booking->md_booking_prefix = 1;
+        $booking->md_booking_prefix = $request->prefix;
         $booking->md_booking_fname = $request->fname;
         $booking->md_booking_lname = $request->lname;
         $booking->md_booking_tel = $request->tel;

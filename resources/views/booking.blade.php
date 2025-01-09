@@ -231,10 +231,10 @@
                                         <div class="flex-row gap-15">
 
                                             <div class="w-20p">
-                                                <label for="md_booking_prefix" class="text-grey">Prefix</label>
-                                                <select id="md_booking_prefix" name="md_booking_prefix">
-                                                    <option value="mr">Mr</option>
-                                                    <option value="mrs">Mrs</option>
+                                                <label for="prefix" class="text-grey">Prefix</label>
+                                                <select id="prefix" name="prefix">
+                                                    <option value="1">Mr</option>
+                                                    <option value="2">Mrs</option>
                                                 </select>
                                             </div>
                                             <div class="w-40p">
