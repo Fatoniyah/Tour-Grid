@@ -13,18 +13,18 @@ class MdBooking extends Model
     protected $primaryKey = 'md_booking_id';
     public $timestamps = false;
 
-    public function province()
-    {
-        return $this->belongsTo(MdProvince::class, 'md_booking_provinceid', 'md_province_id');
-    }
+    // public function province()
+    // {
+    //     return $this->belongsTo(MdProvince::class, 'md_booking_provinceid', 'md_province_id');
+    // }
 
-    public function tour()
-    {
-        return $this->belongsTo(MdTour::class, 'md_booking_tourid', 'md_tour_id');
-    }
+    // public function tour()
+    // {
+    //     return $this->belongsTo(MdTour::class, 'md_booking_tourid', 'md_tour_id');
+    // }
 
-     public function countries()
-    {
-        return $this->belongsTo(SysCountries::class, 'md_booking_countryid', 'sys_countries_id');
-    }
+    //  public function countries()
+    // {
+    //     return $this->belongsTo(SysCountries::class, 'md_booking_countryid', 'sys_countries_id');
+    // }
 }

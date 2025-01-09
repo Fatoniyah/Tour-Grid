@@ -13,8 +13,8 @@ class MdProvince extends Model
     protected $primaryKey = 'md_province_id';
     public $timestamps = false;
 
-    public function bookings()
-    {
-        return $this->hasMany(MdBooking::class, 'md_booking_provinceid', 'md_province_id');
-    }
+    // public function bookings()
+    // {
+    //     return $this->hasMany(MdBooking::class, 'md_booking_provinceid', 'md_province_id');
+    // }
 }

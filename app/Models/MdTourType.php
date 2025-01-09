@@ -13,8 +13,8 @@ class MdTourType extends Model
     protected $primaryKey = 'md_tourtype_id';
     public $timestamps = false;
 
-    public function tours()
-    {
-        return $this->hasMany(MdTour::class, 'md_tour_typeid', 'md_tourtype_id');
-    }
+    // public function tours()
+    // {
+    //     return $this->hasMany(MdTour::class, 'md_tour_typeid', 'md_tourtype_id');
+    // }
 }
