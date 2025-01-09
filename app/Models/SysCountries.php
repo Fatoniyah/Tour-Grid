@@ -12,4 +12,9 @@ class SysCountries extends Model
     protected $table = 'sys_countries';
     protected $primaryKey = 'sys_countries_id';
     public $timestamps = false;
+
+    // public function tour()
+    // {
+    //     return $this->belongsTo(SysCountries::class, 'sys_countries_id', 'md_tour_count');
+    // }
 }

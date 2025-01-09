@@ -21,12 +21,13 @@ class MdBookingController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
+        // dd( $md_tour );
         $md_tour = MdTour::findOrFail($request->md_tour_id);
         // $sys_countries = SysCountries::findOrFail($request->sys_countries_id);
 
-        $sys_countries = $md_tour->countries;
+        // $sys_countries = $md_tour->countries;
 
+        // dd($md_tour);
         $validated = $request->validate([
             'fname' => 'required|string|max:255',
             'lname' => 'required|string|max:255',
@@ -48,7 +49,7 @@ class MdBookingController extends Controller
         $booking->md_booking_lname = $request->lname;
         $booking->md_booking_tel = $request->tel;
         $booking->md_booking_country = $md_tour->countries->sys_countries_name ?? 'ไม่มี id ประเทศ';
-        $booking->md_booking_countrycode = $md_tour->countries->code ?? 'ไม่มี code ประเทศ';
+        $booking->md_booking_countrycode = $md_tour->countries->sys_countries_code ?? 'ไม่มี code ประเทศ';
         $booking->md_booking_pickup = $md_tour->md_tour_pickup;
         $booking->md_booking_pickuptime = $md_tour->md_tour_pickuptime;
         $booking->md_booking_email = $request->email;
@@ -87,6 +88,8 @@ class MdBookingController extends Controller
         $booking->md_booking_updatedate = now();
 
         $booking->save();
+
+        dd($booking);
 
         return redirect()->route('success')->with('success', 'การจองของคุณสำเร็จ');
     }
