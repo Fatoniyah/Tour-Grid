@@ -27,7 +27,7 @@ body {
     width: calc(33.33% - 10px);
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 800px) {
     .flex-container > div {
         width: calc((100% - 5px) / 2);
     }

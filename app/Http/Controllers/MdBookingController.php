@@ -41,7 +41,7 @@ class MdBookingController extends Controller
         $booking->md_booking_code = $md_tour->md_tour_code;
         $booking->md_booking_groupcode = '';
         $booking->md_booking_companyid = $md_tour->md_tour_companyid;
-        $booking->md_booking_paymentid = 'default_payment';
+        $booking->md_booking_paymentid = '1';
         $booking->md_booking_provinceid = $md_tour->md_tour_provid;
         $booking->md_booking_tourid = $request->md_tour_id;
         $booking->md_booking_prefix = $request->prefix;
