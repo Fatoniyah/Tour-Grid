@@ -89,7 +89,7 @@ class MdBookingController extends Controller
 
         $booking->save();
 
-        dd($booking);
+        // dd($booking);
 
         return redirect()->route('success')->with('success', 'การจองของคุณสำเร็จ');
     }
