@@ -4,13 +4,14 @@
 
 @section('content')
 
-<div class="thank-banner">
-    <div>ยินดีด้วยคุณจองสำเร็จ</div>
-  <div><a href="{{ url('') }}">กลับหน้าแรก</a></div>
+
+    <div class="thank-banner">
+        @if (session('success'))
+            <div>{{ session('success') }}</div>
+        @endif
+        <div><a href="{{ url('') }}">กลับหน้าแรก</a></div>
+    </div>
 
 
-
-
-</div>
 
 @endsection
