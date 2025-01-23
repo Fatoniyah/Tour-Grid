@@ -21,5 +21,5 @@ Route::get('detail/{md_tour_id}/booking', [MdBookingController::class, 'booking'
 Route::get('/booking/{md_tour_id}/{sys_countries_id?}', [MdBookingController::class, 'booking']);
 
 Route::post('detail/{md_tour_id}/booking', [MdBookingController::class, 'store'])->name('booking.store');
-Route::get('success', [MdBookingController::class,'success'])->name('success');
+Route::get('detail/{md_tour_id}/booking/success/{md_booking_id}', [MdBookingController::class,'success'])->name('success');
 

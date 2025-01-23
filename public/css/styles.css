@@ -752,3 +752,8 @@ input:hover, select:hover{
 
 
 }
+
+.border-grey{
+    border: 2px solid gray;
+    background-color: #5243d949;
+}
